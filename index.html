@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiba Inu</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Shiba Inu Fun Facts 🐕</h1>
+        <img src="boop shiba inu.avif" alt="Shiba Inu" width="450" height="300">
+        <img src="doge funny.jpg" alt="Shiba Inu Smile" width="450" height="300">
+        <p>Here are some fun facts about Shiba Inus!</p>
+        <p>- Shiba Inus are known for their fox-like appearance and curled tail.</p>
+        <p>- They are intelligent and alert dogs, making them great companions.</p>
+        <p>- Shiba Inus are independent and can be quite stubborn at times.</p>
+        <button id="factBtn">Get a Random Fun Fact!</button>
+        <div id="factDisplay"></div>
+    </div>
+    <script>
+        const facts = [
+            "Shiba Inus originated in Japan and are one of the oldest dog breeds.",
+            "They have a double coat that sheds seasonally, so regular grooming is key!",
+            "Shiba Inus are known for their 'Shiba scream' when excited or frustrated.",
+            "They love to dig and explore, so a secure yard is important.",
+            "Despite their small size, Shiba Inus have a big personality and lots of energy!"
+        ];
+
+        document.getElementById('factBtn').addEventListener('click', function() {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('factDisplay').textContent = randomFact;
+        });
+
+        // Jumpscare effect for images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                this.classList.toggle('zoomed');
+            });
+        });
+    </script>
+</body>
+</html>
